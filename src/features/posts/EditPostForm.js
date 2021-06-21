@@ -23,7 +23,7 @@ export const EditPostForm = ({ match }) => {
   const onSavePostClicked = () => {
     if (title && content) {
       dispatch(postUpdated({ id: postId, title, content }))
-      history.push(`/post/${postId}`)
+      history.push(`/posts/${postId}`)
     }
   }
 
@@ -36,11 +36,11 @@ export const EditPostForm = ({ match }) => {
           type="text"
           id="postTitle"
           name="postTitle"
+          placeholder="What's on your mind?"
           value={title}
           onChange={onTitleChanged}
-          placeholder="what's on your mind?"
         />
-        <label htmlFor="postConent">Content</label>
+        <label htmlFor="postContent">Content:</label>
         <textarea
           id="postContent"
           name="postContent"
